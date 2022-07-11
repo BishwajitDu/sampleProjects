@@ -13,4 +13,6 @@ This is an test project on weather application. In this project many concepts of
 9. use of private(set)
 10. Unit Testing
 
+There are few security checks also added in this application. Like Jail break device. The app wont launch if its a Jail break device.
+
 Repo created for sample projects
