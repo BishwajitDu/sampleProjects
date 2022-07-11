@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<string>Vienna,Austria</string>
+	<string>San Francisco,USA</string>
+	<string>Shanghai,China</string>
+	<string>Toronto,Canada</string>
+	<string>Melbourne,Australia</string>
+	<string>Berlin,Germany</string>
+	<string>Sydney,Australia</string>
+	<string>Moscow,Russia</string>
+	<string>Madrid,Spain</string>
+	<string>Brussels,Belgium</string>
+	<string>Beijing,China</string>
+	<string>Tokyo,Japan</string>
+	<string>Paris,France</string>
+	<string>London,UK</string>
+	<string>New York,USA</string>
+	<string>Kolkata,India</string>
+	<string>Mumbai,India</string>
+	<string>Delhi,India</string>
+</array>
+</plist>
