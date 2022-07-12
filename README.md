@@ -13,6 +13,8 @@ This is an test project on weather application. In this project many concepts of
 9. use of private(set)
 10. Unit Testing
 
-There are few security checks also added in this application. Like Jail break device. The app wont launch if its a Jail break device.
+There are few security checks also added in this application. The app wont launch if its a Jail break device. The app is made keeping in mind the scalability and module segrigation. (SOLID principles)
+
+Note: For running the app may need to reinstall the pod.
 
 Repo created for sample projects
