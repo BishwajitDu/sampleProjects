@@ -9,9 +9,10 @@ This is an test project on weather application. In this project many concepts of
 5. API handling with Url session
 6. Model class and codables
 7. MVVM Design structure
-8. Protocol oriented to support Unit testing
-9. use of private(set)
-10. Unit Testing
+8. Localization
+9. Protocol oriented to support Unit testing
+10. use of private(set)
+11. Unit Testing
 
 There are few security checks also added in this application. The app wont launch if its a Jail break device. The app is made keeping in mind the scalability and module segrigation. (SOLID principles)
 
