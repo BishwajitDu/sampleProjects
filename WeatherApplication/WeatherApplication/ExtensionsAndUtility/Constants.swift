@@ -18,6 +18,5 @@ class Constants: NSObject {
     
     static let headerTextViewOffset   : CGFloat = 100.0
     
-    static let placeSelectionHeader : String = "Place list \n Select any place from list to show the report."
-
+    static let placeSelectionHeader : String = NSLocalizedString("PlaceSelectionHeader", comment: "")
 }
