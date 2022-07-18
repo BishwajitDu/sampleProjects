@@ -1,8 +1,11 @@
 # Weather Application
 
 Xcode Version: Version 13.2.1 (13C100)
+
 Minimum iOS version supported: 12.0
+
 Architecture Used : MVVM
+
 Dependency : Snapkit 
 
 Need to install pod before running the project. Pod file is included in the project just need to do install pod from terminal
