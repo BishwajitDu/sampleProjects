@@ -1,6 +1,15 @@
 # Weather Application
 
-This is an test project on weather application. In this project many concepts of swift are covered. Some of the concepts are as follows:
+Xcode Version: Version 13.2.1 (13C100)
+Minimum iOS version supported: 12.0
+Architecture Used : MVVM
+Dependency : Snapkit 
+
+Need to install pod before running the project. Pod file is included in the project just need to do install pod from terminal
+
+
+This is an test project on weather application. In this project many concepts of swift are covered. 
+Some of the concepts are as follows:
 
 1. Typealias
 2. Access specifiers
