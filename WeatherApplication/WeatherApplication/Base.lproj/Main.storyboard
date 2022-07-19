@@ -133,11 +133,11 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="additionalDataTable" destination="kfH-Dl-sGf" id="a9C-bS-RiU"/>
-                        <outlet property="dateLabel" destination="nFz-NI-gVk" id="2LP-EQ-fRs"/>
-                        <outlet property="placeLabel" destination="MOP-fG-hPo" id="3sV-Pb-cJW"/>
-                        <outlet property="tempUnit" destination="14v-9E-QLS" id="jUC-R7-JuU"/>
-                        <outlet property="temperature" destination="zQU-ZL-TgF" id="rXH-nJ-djU"/>
-                        <outlet property="weatherType" destination="jtn-fs-v6F" id="qiM-O0-NwI"/>
+                        <outlet property="dateLbl" destination="nFz-NI-gVk" id="2LP-EQ-fRs"/>
+                        <outlet property="placeLbl" destination="MOP-fG-hPo" id="3sV-Pb-cJW"/>
+                        <outlet property="temperatureLbl" destination="zQU-ZL-TgF" id="rXH-nJ-djU"/>
+                        <outlet property="temperatureUnitLbl" destination="14v-9E-QLS" id="jUC-R7-JuU"/>
+                        <outlet property="weatherTypeLbl" destination="jtn-fs-v6F" id="qiM-O0-NwI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
