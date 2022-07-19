@@ -9,11 +9,11 @@ import UIKit
 
 class DashboardViewController: WeatherBaseViewController {
     
-    @IBOutlet private weak var placeLabel : UILabel?
-    @IBOutlet private weak var dateLabel : UILabel?
-    @IBOutlet private weak var weatherType : UILabel?
-    @IBOutlet private weak var temperature : UILabel?
-    @IBOutlet private weak var tempUnit : UILabel?
+    @IBOutlet private weak var placeLbl : UILabel?
+    @IBOutlet private weak var dateLbl : UILabel?
+    @IBOutlet private weak var weatherTypeLbl : UILabel?
+    @IBOutlet private weak var temperatureLbl : UILabel?
+    @IBOutlet private weak var temperatureUnitLbl : UILabel?
     @IBOutlet private weak var additionalDataTable : UITableView?
     
     var apiErrorMessage : String?
@@ -52,11 +52,11 @@ class DashboardViewController: WeatherBaseViewController {
     }
     
     func setupView() {
-        placeLabel?.textColor = UIColor.white
-        dateLabel?.textColor = UIColor.white
-        weatherType?.textColor = UIColor.white
-        temperature?.textColor = UIColor.white
-        tempUnit?.textColor = UIColor.white
+        placeLbl?.textColor = UIColor.white
+        dateLbl?.textColor = UIColor.white
+        weatherTypeLbl?.textColor = UIColor.white
+        temperatureLbl?.textColor = UIColor.white
+        temperatureUnitLbl?.textColor = UIColor.white
         self.additionalDataTable?.register(AdditionalDetailsCell.self, forCellReuseIdentifier: Constants.additionalDetailsCell)
         self.additionalDataTable?.backgroundColor = UIColor.clear
         self.navigationController?.navigationBar.tintColor = UIColor.white
@@ -73,14 +73,15 @@ class DashboardViewController: WeatherBaseViewController {
     }
     
     private func showCurrentWeatherData() {
-        self.placeLabel?.text = weatherData?.locationName ?? ""
-        self.dateLabel?.text = weatherData?.dateTime?.changeEpochToLongDate()
-        self.weatherType?.text = weatherData?.weatherType?.first?.type ?? ""
-        self.temperature?.text = String(weatherData?.additionalWeatherData?.temp ?? 0.0)
-        self.tempUnit?.text = "°F"
+        self.placeLbl?.text = weatherData?.locationName ?? ""
+        self.dateLbl?.text = weatherData?.dateTime?.changeEpochToLongDate()
+        self.weatherTypeLbl?.text = weatherData?.weatherType?.first?.type ?? ""
+        self.temperatureLbl?.text = String(weatherData?.additionalWeatherData?.temp ?? 0.0)
+        self.temperatureUnitLbl?.text = "°F"
     }
 }
 
+//MARK: TableView Delegate
 extension DashboardViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.additionalWeatherData?.list?.count ?? 0
@@ -99,6 +100,4 @@ extension DashboardViewController : UITableViewDelegate, UITableViewDataSource {
         }
         return cell
     }
-    
-    
 }
