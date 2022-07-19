@@ -24,4 +24,7 @@ class ImageExtensionTest: XCTestCase {
         XCTAssertTrue(testEpochTime.changeEpochToLongDate() == "Tuesday, Jul 19, 2022", "Miss match in date coversion")
     }
 
+    func testIntegerShortDateExtension() {
+        XCTAssertTrue(testEpochTime.changeEpochToTime() == "16:29", "Miss match in time coversion")
+    }
 }
