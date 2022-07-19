@@ -1,5 +1,4 @@
 .DS_STORE
-./Podfile.lock
 
 # Private Keys
 *.pem
@@ -14,7 +13,7 @@
 
 # Xcode
 xcuserdata/
-project.xcworkspace/
+WeatherApplication.xcworkspace/
 DerivedData/
 
 # build products
@@ -24,3 +23,4 @@ build/
 
 # Cocoapods
 Pods/
+Podfile.lock
