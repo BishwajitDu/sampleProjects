@@ -14,6 +14,7 @@ extension Int {
     func changeEpochToLongDate() -> String {
         let date = Date(timeIntervalSince1970: TimeInterval(self))
         let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone(abbreviation: "GMT+5.30")
         dateFormatter.dateFormat = "EEEE, MMM dd, yyyy"
         return dateFormatter.string(from: date as Date)
     }
@@ -22,6 +23,7 @@ extension Int {
     func changeEpochToTime() -> String {
         let date = Date(timeIntervalSince1970: TimeInterval(self))
         let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone(abbreviation: "GMT+5.30")
         dateFormatter.dateFormat = "HH:mm"
         return dateFormatter.string(from: date as Date)
     }
