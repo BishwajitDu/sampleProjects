@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  WeatherApplication
+
+  Created by Bishwajit Dutta on 12/07/22.
+  
+*/
+
+"PlaceSelectionHeader" = "Liste de lieux \n Sélectionnez n'importe quel endroit de la liste pour afficher le rapport.";
