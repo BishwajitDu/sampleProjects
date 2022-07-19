@@ -11,7 +11,7 @@ import SnapKit
 class AdditionalDetailsCell: UITableViewCell {
 
     // Created the labels programatically
-    private let time : UILabel = {
+    private let timeLbl : UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 17, weight: .bold)
         label.textColor = UIColor.white
@@ -19,7 +19,7 @@ class AdditionalDetailsCell: UITableViewCell {
         return label
     }()
     
-    private let temperature : UILabel = {
+    private let temperatureLbl : UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 17, weight: .bold)
         label.textColor = UIColor.white
@@ -28,7 +28,7 @@ class AdditionalDetailsCell: UITableViewCell {
     }()
     
     
-    private let humidity : UILabel = {
+    private let humidityLbl : UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 17, weight: .bold)
         label.textColor = UIColor.white
@@ -49,19 +49,19 @@ class AdditionalDetailsCell: UITableViewCell {
     
     // Binding data for the cell
     func bindData(time: String?, humidity: Float?, temp: Float?, icon: String?) {
-        self.humidity.text = "\(String(humidity ?? 0)) %"
-        self.time.text = time ?? "00:00"
-        self.temperature.text = "\(String(temp ?? 0.0)) °K"
+        self.humidityLbl.text = "\(String(humidity ?? 0)) %"
+        self.timeLbl.text = time ?? "00:00"
+        self.temperatureLbl.text = "\(String(temp ?? 0.0)) °K"
         setupCellView()
     }
     
     // Setting up the constraints manually. Used 3rd party library to do tha from Cocoa pods
     private func setupCellView() {
         self.backgroundColor = UIColor.clear
-        self.mainStackView.addArrangedSubview(self.time)
+        self.mainStackView.addArrangedSubview(self.timeLbl)
         self.mainStackView.addArrangedSubview(self.iconView)
-        self.mainStackView.addArrangedSubview(self.temperature)
-        self.mainStackView.addArrangedSubview(self.humidity)
+        self.mainStackView.addArrangedSubview(self.temperatureLbl)
+        self.mainStackView.addArrangedSubview(self.humidityLbl)
         self.addSubview(self.mainStackView)
         self.mainStackView.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(Constants.edgeOffSet)
