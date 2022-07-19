@@ -27,7 +27,7 @@ class PlaceSelectionControllerTest: XCTestCase {
         mockVM?.checkForCityListZero = true
         testController?.viewModel = mockVM
         testController?.fetchData()
-        XCTAssertEqual(testController?.cityList.count, 0, "City list should be zero")
+        XCTAssertEqual(testController?.cityListArr.count, 0, "City list should be zero")
     }
     
     
@@ -35,20 +35,20 @@ class PlaceSelectionControllerTest: XCTestCase {
         mockVM?.checkForCityListZero = false
         testController?.viewModel = mockVM
         testController?.fetchData()
-        XCTAssertTrue(testController?.cityList.count == 5, "City list count mismatch")
+        XCTAssertTrue(testController?.cityListArr.count == 5, "City list count mismatch")
     }
     
     func testScreenTitle() {
         testController?.viewModel = mockVM
         testController?.fetchData()
-        XCTAssertTrue(testController?.titleText.text == "This text is from Mock data", "Text miss match")
+        XCTAssertTrue(testController?.titleLbl.text == "This text is from Mock data", "Text miss match")
     }
     
     func testDataItemInCityList() {
         mockVM?.checkForCityListZero = false
         testController?.viewModel = mockVM
         testController?.fetchData()
-        XCTAssertTrue(testController?.cityList[2] == "Beijing,China", "City list item miss match")
+        XCTAssertTrue(testController?.cityListArr[2] == "Beijing,China", "City list item miss match")
     }
 
 }
