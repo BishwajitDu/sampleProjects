@@ -24,7 +24,7 @@ class PlaceSelectionViewController: WeatherBaseViewController {
     }()
     
     // Created the lable programatically
-    let titleText : UILabel = {
+    let titleLbl : UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 21, weight: .semibold)
         label.textColor = UIColor.appTextColour
@@ -35,7 +35,7 @@ class PlaceSelectionViewController: WeatherBaseViewController {
     
     var viewModel : PlaceSelectionViewModelProtocol?
     
-    var cityList : [String] = [] {
+    var cityListArr : [String] = [] {
         didSet{
             self.cityTableView.reloadData()
         }
@@ -57,9 +57,9 @@ class PlaceSelectionViewController: WeatherBaseViewController {
     
     // Protocol functions
     func setupView() {
-        self.view.addSubview(titleText)
+        self.view.addSubview(titleLbl)
         self.view.addSubview(cityTableView)
-        titleText.snp.makeConstraints { make in
+        titleLbl.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(Constants.edgeOffSet)
             make.trailing.equalToSuperview().offset(-Constants.edgeOffSet)
             make.top.equalToSuperview().offset(Constants.headerTextViewOffset)
@@ -68,15 +68,15 @@ class PlaceSelectionViewController: WeatherBaseViewController {
         cityTableView.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(Constants.interElementOffSet)
             make.trailing.equalToSuperview().offset(-Constants.interElementOffSet)
-            make.top.equalTo(titleText.snp.bottom).offset(Constants.interElementOffSet)
+            make.top.equalTo(titleLbl.snp.bottom).offset(Constants.interElementOffSet)
             make.bottom.equalToSuperview().offset(-Constants.interElementOffSet)
         }
     }
     
     func fetchData() {
         // Need to get the data from view model
-        self.titleText.text = viewModel?.screenTitle() ?? ""
-        self.cityList = viewModel?.fetchCityList() ?? []
+        self.titleLbl.text = viewModel?.screenTitle() ?? ""
+        self.cityListArr = viewModel?.fetchCityList() ?? []
     }
 
 }
@@ -84,19 +84,19 @@ class PlaceSelectionViewController: WeatherBaseViewController {
 //MARK: Table view delegate and data source
 extension PlaceSelectionViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.cityList.count
+        return self.cityListArr.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cityNameDisplayCell, for: indexPath) as? CityNameDisplayCell else {
             return UITableViewCell()
         }
-        cell.bindData(name: self.cityList[indexPath.row])
+        cell.bindData(name: self.cityListArr[indexPath.row])
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let nextViewCOntroller = DashboardViewController.getDashboardViewController(withViewModel: WeatherDashboardViewModel(cityName: self.cityList[indexPath.row])) else { return }
+        guard let nextViewCOntroller = DashboardViewController.getDashboardViewController(withViewModel: WeatherDashboardViewModel(cityName: self.cityListArr[indexPath.row])) else { return }
         self.navigationController?.pushViewController(nextViewCOntroller, animated: true)
     }
     
