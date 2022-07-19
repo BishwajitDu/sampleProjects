@@ -11,7 +11,7 @@ import SnapKit
 class CityNameDisplayCell: UITableViewCell {
     
     // Created the labels programatically
-    private let cityName : UILabel = {
+    private let cityNameLbl : UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 17, weight: .bold)
         label.textColor = UIColor.appTextColour
@@ -19,7 +19,7 @@ class CityNameDisplayCell: UITableViewCell {
         return label
     }()
     
-    private let countryName : UILabel = {
+    private let countryNameLbl : UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 15, weight: .semibold)
         label.textColor = UIColor.appTextColour
@@ -39,15 +39,15 @@ class CityNameDisplayCell: UITableViewCell {
     // Binding data to cell
     func bindData(name : String) {
         let nameArray = name.split(separator: ",").map { String($0) }
-        self.cityName.text = nameArray.first ?? ""
-        self.countryName.text = nameArray.last ?? ""
+        self.cityNameLbl.text = nameArray.first ?? ""
+        self.countryNameLbl.text = nameArray.last ?? ""
         self.setupCellView()
     }
     
     // Setting up the constraints manually. Used 3rd party library to do tha from Cocoa pods
     private func setupCellView() {
-        self.mainStackView.addArrangedSubview(self.cityName)
-        self.mainStackView.addArrangedSubview(self.countryName)
+        self.mainStackView.addArrangedSubview(self.cityNameLbl)
+        self.mainStackView.addArrangedSubview(self.countryNameLbl)
         self.addSubview(self.mainStackView)
         self.mainStackView.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(Constants.edgeOffSet)
